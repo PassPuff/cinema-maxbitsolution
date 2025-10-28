@@ -1,7 +1,7 @@
 import React from "react";
 import { MovieList } from "../../../entities/movies/ui/MovieList";
 
-const MainPage: React.FC = () => {
+const FilmsPage: React.FC = () => {
   return (
     <div>
       <MovieList />
@@ -9,4 +9,4 @@ const MainPage: React.FC = () => {
   );
 };
 
-export default MainPage;
+export default FilmsPage;
