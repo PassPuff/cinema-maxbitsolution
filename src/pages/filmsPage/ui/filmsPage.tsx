@@ -1,5 +1,5 @@
 import React from "react";
-import { MovieList } from "../../../entities/movie/ui/MovieList";
+import { MovieList } from "../../../entities/movies/ui/MovieList";
 
 const MainPage: React.FC = () => {
   return (

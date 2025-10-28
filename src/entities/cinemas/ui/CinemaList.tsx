@@ -1,4 +1,5 @@
 import { useCinemasQuery } from "../api/getMovies";
+import { Button } from "../../../shared/components/ui/button.tsx";
 
 export const CinemaList = () => {
   const { data: movies, isLoading, isError } = useCinemasQuery();
@@ -23,9 +24,9 @@ export const CinemaList = () => {
           >
             <span>{movie.name}</span>
             <span>{movie.address} мин</span>
-            <button className="w-min bg-blue-600 hover:bg-blue-700 text-white py-1 px-3 rounded-lg transition-colors duration-200">
+            <Button variant="default" size="sm">
               Посмотреть
-            </button>
+            </Button>
           </li>
         ))}
       </ul>
