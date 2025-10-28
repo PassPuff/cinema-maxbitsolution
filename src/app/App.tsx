@@ -1,8 +1,8 @@
 import AppRouter from "./router";
-import Sidebar from "../widgets/Sidebar/ui/Sidebar";
+import { Sidebar } from "@/widgets/sidebar";
 import { BrowserRouter } from "react-router-dom";
-import { PageTitle } from "../widgets/PageTitle/ui/PageTitle";
-import { QueryProvider } from "./providers/QueryProvider";
+import { PageTitle } from "@/widgets/page-title";
+import { QueryProvider } from "./providers/query-provider";
 
 function App() {
   return (

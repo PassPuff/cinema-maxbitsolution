@@ -1,14 +1,14 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import FilmsPage from "../pages/filmsPage/ui/filmsPage.tsx";
-import CinemasPage from "../pages/CinemasPage/ui/CinemasPage";
-import CinemaPage from "../pages/CinemaPage/ui/CinemaPage";
-import LoginPage from "../pages/WORK/LoginPage/ui/LoginPage";
-import RegisterPage from "../pages/WORK/RegisterPage/ui/RegisterPage";
-// import MoviePage from "../pages/MoviePage/ui/MoviePage";
-import  MovieSessions from "../pages/MoviePage/ui/MoviePage";
-// import SessionPage from "../pages/SessionPage/ui/SessionPage";
-// import BookingsPage from "../pages/BookingsPage/ui/BookingsPage";
+import FilmsPage from "@/pages/films-page/ui/films-page";
+import CinemasPage from "@/pages/cinemas-page/ui/cinemas-page";
+import CinemaPage from "@/pages/cinema-page/ui/cinema-page";
+import LoginPage from "@/pages/work/login-page/ui/login-page";
+import RegisterPage from "@/pages/work/register-page/ui/register-page";
+// import MoviePage from "@/pages/movie-page/ui/movie-page";
+import MovieSessions from "@/pages/movie-page/ui/movie-page";
+// import SessionPage from "@/pages/work/session-page/ui/session-page";
+// import BookingsPage from "@/pages/work/bookings-page/ui/bookings-page";
 
 const AppRouter: React.FC = () => (
   <Routes>
