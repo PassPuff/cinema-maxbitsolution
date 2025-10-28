@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const LoginPage: React.FC = () => {
   return <div>Страница "Вход"</div>;

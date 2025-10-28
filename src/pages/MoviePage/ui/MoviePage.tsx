@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const MoviePage: React.FC = () => {
   return <div>Страница фильма с сеансами</div>;

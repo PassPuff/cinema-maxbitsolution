@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const SessionPage: React.FC = () => {
   return <div>Страница бронирования мест на сеанс</div>;
