@@ -1,10 +1,13 @@
 import { useMoviesQuery } from "../api/getMovies";
 import { Button } from "../../../shared/components/ui/button.tsx";
-import { useNavigate } from "react-router-dom";
+import { getImageUrl } from "../../../shared/config";
 
-export const MovieList = () => {
+interface MovieListProps {
+  onMovieClick: (movieId: number) => void;
+}
+
+export const MovieList = ({ onMovieClick }: MovieListProps) => {
   const { data: movies, isLoading, isError } = useMoviesQuery();
-  const navigate = useNavigate();
 
   if (isLoading) return <p>Загрузка...</p>;
   if (isError) return <p>Ошибка загрузки фильмов</p>;
@@ -25,14 +28,14 @@ export const MovieList = () => {
             className="grid grid-cols-[90px_0.6fr_180px_160px_120px] gap-4 items-center rounded-2xl shadow-md p-2 hover:shadow-lg transition-shadow duration-200"
           >
             <img
-              src={`http://localhost:3022${movie.posterImage}`}
+              src={getImageUrl(movie.posterImage)}
               alt={movie.title}
               className="w-10 h-10 object-cover rounded"
             />
             <span>{movie.title}</span>
             <span>{movie.lengthMinutes} мин</span>
             <span>{movie.rating}</span>
-            <Button onClick={() => navigate(`/movies/${movie.id}/sessions`)}>
+            <Button onClick={() => onMovieClick(movie.id)}>
               Посмотреть
             </Button>
           </li>

@@ -1,7 +1,8 @@
 import { useMovieSessionsQuery } from "../api/getMovieSessionsQuery.ts";
 import { useParams } from "react-router-dom";
-import { useMoviesQuery } from "../../movies/api/getMovies.ts";
+import { useMoviesQuery } from "../../movies";
 import { Button } from "../../../shared/components/ui/button.tsx";
+import { getImageUrl } from "../../../shared/config";
 
 export const MovieSessions = () => {
   const { movieId } = useParams<{ movieId: string }>();
@@ -25,7 +26,7 @@ export const MovieSessions = () => {
       {/* 🔸 Информация о фильме */}
       <div className="flex gap-6 items-start">
         <img
-          src={`http://localhost:3022${movie?.posterImage}`}
+          src={getImageUrl(movie?.posterImage)}
           alt={movie?.title}
           className="w-40 h-auto rounded-lg shadow-md"
         />

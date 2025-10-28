@@ -1,10 +1,12 @@
 import { useCinemasQuery } from "../api/getCinemas.ts";
 import { Button } from "../../../shared/components/ui/button.tsx";
-import { useNavigate } from "react-router-dom";
 
-export const CinemaList = () => {
+interface CinemaListProps {
+  onCinemaClick: (cinemaId: number) => void;
+}
+
+export const CinemaList = ({ onCinemaClick }: CinemaListProps) => {
   const { data: cinemas, isLoading, isError } = useCinemasQuery();
-  const navigate = useNavigate();
 
   if (isLoading) return <p>Загрузка...</p>;
   if (isError) return <p>Ошибка загрузки фильмов</p>;
@@ -23,10 +25,10 @@ export const CinemaList = () => {
             className="grid grid-cols-3 gap-4 items-center rounded-2xl shadow-md p-2 hover:shadow-lg transition-shadow duration-200"
           >
             <span>{cinema.name}</span>
-            <span>{cinema.address} мин</span>
+            <span>{cinema.address}</span>
             <Button
               className="max-w-max"
-              onClick={() => navigate(`/cinemas/${cinema.id}/sessions`)}
+              onClick={() => onCinemaClick(cinema.id)}
             >
               Посмотреть
             </Button>

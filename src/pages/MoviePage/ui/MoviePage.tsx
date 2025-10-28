@@ -1,5 +1,5 @@
 import React from "react";
-import { MovieSessions } from "../../../entities/movieSessions/ui/MovieSessions.tsx";
+import { MovieSessions } from "../../../entities/movieSessions";
 
 const MoviePage: React.FC = () => {
   return(

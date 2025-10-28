@@ -1,8 +1,15 @@
 import React from "react";
-import { CinemaList } from "../../../entities/cinemas/ui/CinemaList";
+import { useNavigate } from "react-router-dom";
+import { CinemaList } from "../../../entities/cinemas";
 
 const CinemasPage: React.FC = () => {
-  return <CinemaList />;
+  const navigate = useNavigate();
+
+  const handleCinemaClick = (cinemaId: number) => {
+    navigate(`/cinemas/${cinemaId}/sessions`);
+  };
+
+  return <CinemaList onCinemaClick={handleCinemaClick} />;
 };
 
 export default CinemasPage;

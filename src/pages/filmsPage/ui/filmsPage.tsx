@@ -1,10 +1,17 @@
 import React from "react";
-import { MovieList } from "../../../entities/movies/ui/MovieList";
+import { useNavigate } from "react-router-dom";
+import { MovieList } from "../../../entities/movies";
 
 const FilmsPage: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleMovieClick = (movieId: number) => {
+    navigate(`/movies/${movieId}/sessions`);
+  };
+
   return (
     <div>
-      <MovieList />
+      <MovieList onMovieClick={handleMovieClick} />
     </div>
   );
 };

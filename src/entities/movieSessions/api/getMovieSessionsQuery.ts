@@ -22,7 +22,7 @@ const fetchCinemas = () => baseFetch<Cinema[]>(`/cinemas`);
 
 export const useMovieSessionsQuery = (movieId: string) =>
   useQuery({
-    queryKey: [queryKeys.movie, movieId],
+    queryKey: queryKeys.movieSessions(Number(movieId)),
     queryFn: async (): Promise<GroupedCinemaSessions[]> => {
       const [sessions, cinemas] = await Promise.all([
         fetchMovieSessions(movieId),
