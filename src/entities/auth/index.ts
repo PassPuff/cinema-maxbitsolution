@@ -5,3 +5,5 @@ export type { LoginRequest, RegisterRequest, AuthResponse, User, AuthError } fro
 export { validateUsername, validatePassword, validatePasswordConfirmation } from './lib/validation';
 export type { ValidationResult } from './lib/validation';
 export { RegisterForm } from './ui/register-form';
+export { LoginForm } from './ui/login';
+

@@ -1,4 +1,4 @@
-import { LoginForm } from '@/entities/login';
+import { LoginForm } from '@/entities/auth';
 import { PageTitle } from '@/widgets/page-title';
 import { Link } from 'react-router-dom';
 import React from 'react';
