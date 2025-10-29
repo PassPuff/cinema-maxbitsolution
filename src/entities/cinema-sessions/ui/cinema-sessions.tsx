@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useCinemasQuery } from '@/entities/cinemas';
 import { useGroupedCinemaSessionsQuery } from '@/features/cinema-sessions-grouping';
 import { Button } from '@/shared/components/ui/button';
@@ -6,6 +6,7 @@ import { getImageUrl } from '@/shared/config';
 
 export const CinemaSessions = () => {
   const { cinemaId } = useParams<{ cinemaId: string }>();
+  const navigate = useNavigate();
   const { data: cinemas } = useCinemasQuery();
   const { data, isLoading, isError } = useGroupedCinemaSessionsQuery(String(cinemaId));
 
@@ -68,7 +69,7 @@ export const CinemaSessions = () => {
                 <ul className='flex flex-wrap gap-3'>
                   {dateSessions.map((session) => (
                     <li key={session.id}>
-                      <Button onClick={() => alert(`Выбран сеанс #${session.id}`)}>
+                      <Button onClick={() => navigate(`/sessions/${session.id}`)}>
                         {formatTime(session.startTime)}
                       </Button>
                     </li>

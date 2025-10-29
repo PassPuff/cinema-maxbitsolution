@@ -26,16 +26,7 @@ const Sidebar: React.FC = () => {
       return (
         <button
           onClick={handleLogout}
-          className='text-left w-full hover:text-blue-600 transition-colors'
-          style={{
-            color: '#ccc',
-            textDecoration: 'none',
-            background: 'none',
-            border: 'none',
-            padding: 0,
-            font: 'inherit',
-            cursor: 'pointer',
-          }}
+          className='text-[#ccc] hover:text-white transition-colors'
         >
           Выход
         </button>
@@ -47,7 +38,6 @@ const Sidebar: React.FC = () => {
         to='/login'
         style={{
           color: location.pathname === '/login' ? '#fff' : '#ccc',
-          textDecoration: 'none',
         }}
       >
         Вход
@@ -64,7 +54,6 @@ const Sidebar: React.FC = () => {
               to={link.to}
               style={{
                 color: location.pathname === link.to ? '#fff' : '#ccc',
-                textDecoration: 'none',
               }}
             >
               {link.label}
@@ -86,22 +75,7 @@ const Sidebar: React.FC = () => {
               </Link>
             </li>
           ))}
-
         <li className='mb-4'>{getAuthLink()}</li>
-
-        {!isAuthenticated && (
-          <li className='mb-4'>
-            <Link
-              to='/register'
-              style={{
-                color: location.pathname === '/register' ? '#fff' : '#ccc',
-                textDecoration: 'none',
-              }}
-            >
-              Регистрация
-            </Link>
-          </li>
-        )}
       </ul>
     </nav>
   );

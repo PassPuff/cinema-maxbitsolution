@@ -6,4 +6,3 @@ export { validateUsername, validatePassword, validatePasswordConfirmation } from
 export type { ValidationResult } from './lib/validation';
 export { RegisterForm } from './ui/register-form';
 export { LoginForm } from './ui/login';
-

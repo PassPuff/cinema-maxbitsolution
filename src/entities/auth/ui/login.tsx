@@ -34,6 +34,7 @@ export const LoginForm: React.FC = () => {
   return (
     <form onSubmit={handleSubmit} className='flex flex-col w-full max-w-md gap-8'>
       <Input
+        name='username'
         type='text'
         placeholder='Имя пользователя'
         value={username}
@@ -41,6 +42,7 @@ export const LoginForm: React.FC = () => {
         required
       />
       <Input
+        name='password'
         type='password'
         placeholder='Пароль'
         value={password}

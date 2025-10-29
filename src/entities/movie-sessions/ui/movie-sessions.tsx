@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useMoviesQuery } from '@/entities/movies';
 import { useGroupedMovieSessionsQuery } from '@/features/movie-sessions-grouping';
 import { Button } from '@/shared/components/ui/button';
@@ -6,6 +6,7 @@ import { getImageUrl } from '@/shared/config';
 
 export const MovieSessions = () => {
   const { movieId } = useParams<{ movieId: string }>();
+  const navigate = useNavigate();
   const { data: movies } = useMoviesQuery();
   const { data, isLoading, isError } = useGroupedMovieSessionsQuery(String(movieId));
 
@@ -45,7 +46,7 @@ export const MovieSessions = () => {
           <ul className='flex flex-wrap gap-3'>
             {sessions.map((s) => (
               <li key={s.id}>
-                <Button onClick={() => alert(`Выбран сеанс #${s.id}`)}>{formatTime(s.startTime)}</Button>
+                <Button onClick={() => navigate(`/sessions/${s.id}`)}>{formatTime(s.startTime)}</Button>
               </li>
             ))}
           </ul>

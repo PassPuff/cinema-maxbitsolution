@@ -4,11 +4,13 @@ import FilmsPage from '@/pages/films-page/ui/films-page';
 import CinemasPage from '@/pages/cinemas-page/ui/cinemas-page';
 import CinemaPage from '@/pages/cinema-page/ui/cinema-page';
 import LoginPage from '@/pages/login-page/ui/login-page';
-import RegisterPage from '@/pages/work/register-page/ui/register-page';
+import RegisterPage from '@/pages/register-page/ui/register-page';
 import MovieSessions from '@/pages/movie-page/ui/movie-page';
-import BookingsPage from '@/pages/work/bookings-page/ui/bookings-page';
+import BookingsPage from '@/pages/bookings-page/ui/bookings-page';
+import SessionPage from '@/pages/session-page/ui/session-page';
+import DemoSessionPage from '@/pages/demo-session-page/ui/demo-session-page';
+import DebugPage from '@/pages/debug-page/ui/debug-page';
 import { ProtectedRoute } from './providers';
-// import SessionPage from "@/pages/work/session-page/ui/session-page";
 
 const AppRouter: React.FC = () => (
   <Routes>
@@ -29,7 +31,16 @@ const AppRouter: React.FC = () => (
         </ProtectedRoute>
       }
     />
-    {/*<Route path="/sessions/:sessionId" element={<SessionPage />} />*/}
+    <Route
+      path='/sessions/:sessionId'
+      element={
+        <ProtectedRoute>
+          <SessionPage />
+        </ProtectedRoute>
+      }
+    />
+    <Route path='/demo-session' element={<DemoSessionPage />} />
+    <Route path='/debug' element={<DebugPage />} />
   </Routes>
 );
 
