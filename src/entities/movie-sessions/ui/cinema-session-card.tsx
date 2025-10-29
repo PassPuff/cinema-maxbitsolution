@@ -10,7 +10,7 @@ interface CinemaSessionCardProps {
 
 export const CinemaSessionCard: React.FC<CinemaSessionCardProps> = ({ cinema, sessions }) => {
   return (
-    <div className='bg-gray-900 p-4 rounded-2xl'>
+    <div className='p-4 border-b border-gray-700'>
       <div className='flex justify-between items-center mb-3'>
         <div>
           <h2 className='text-lg font-semibold'>{cinema.name}</h2>

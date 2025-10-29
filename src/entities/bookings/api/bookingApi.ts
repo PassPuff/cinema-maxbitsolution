@@ -28,3 +28,17 @@ export const useUserBookingsQuery = () => {
     queryFn: () => baseFetch<UserBooking[]>('/me/bookings'),
   });
 };
+
+export const usePayBookingMutation = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (bookingId: string) =>
+      baseFetch(`/bookings/${bookingId}/payments`, {
+        method: 'POST',
+      }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['bookings'] });
+    },
+  });
+};

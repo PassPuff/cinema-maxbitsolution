@@ -8,8 +8,7 @@ import RegisterPage from '@/pages/register-page/ui/register-page';
 import MovieSessions from '@/pages/movie-page/ui/movie-page';
 import BookingsPage from '@/pages/bookings-page/ui/bookings-page';
 import SessionPage from '@/pages/session-page/ui/session-page';
-import DemoSessionPage from '@/pages/demo-session-page/ui/demo-session-page';
-import DebugPage from '@/pages/debug-page/ui/debug-page';
+
 import { ProtectedRoute } from './providers';
 
 const AppRouter: React.FC = () => (
@@ -39,8 +38,7 @@ const AppRouter: React.FC = () => (
         </ProtectedRoute>
       }
     />
-    <Route path='/demo-session' element={<DemoSessionPage />} />
-    <Route path='/debug' element={<DebugPage />} />
+
   </Routes>
 );
 

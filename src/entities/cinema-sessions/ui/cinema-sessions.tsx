@@ -17,11 +17,7 @@ export const CinemaSessions = () => {
 
   return (
     <div className='p-6 space-y-6'>
-      <h1 className='text-2xl font-bold mb-4'>Расписание кинотеатра #{cinemaId}</h1>
-
       <CinemaInfo name={cinema?.name} address={cinema?.address} />
-
-      {/* 🔸 Расписание по фильмам */}
       {data.map(({ movie, sessions }) => (
         <MovieSessionsCard key={movie.id} movie={movie} sessions={sessions} />
       ))}

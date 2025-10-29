@@ -20,3 +20,10 @@ export  const formatDate = (iso: string) =>
       month: '2-digit',
       year: 'numeric',
     });
+
+
+export const formatTimeLeft = (seconds: number) => {
+  const mins = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  return `${mins}:${secs.toString().padStart(2, '0')}`;
+};

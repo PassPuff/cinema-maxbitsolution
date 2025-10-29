@@ -9,7 +9,7 @@ export const MovieInfo: React.FC<MovieInfoProps> = ({ posterImage, title, length
       <div>
         <h1 className='text-3xl font-bold'>{title}</h1>
         <p className='text-gray-500 mt-1'>• {lengthMinutes} мин</p>
-        <p className='mt-4 text-gray-700 max-w-2xl'>{description}</p>
+        <p className='mt-4 text-gray-400 max-w-2xl'>{description}</p>
       </div>
     </div>
   );

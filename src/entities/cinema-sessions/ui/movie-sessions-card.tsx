@@ -11,7 +11,7 @@ interface MovieSessionsCardProps {
 
 export const MovieSessionsCard: React.FC<MovieSessionsCardProps> = ({ movie, sessions }) => {
   return (
-    <div className='bg-gray-900 p-4 rounded-2xl'>
+    <div className='p-4 border-b border-gray-700'>
       <MoviePoster
         posterImage={movie.posterImage || ''}
         title={movie.title}

@@ -19,14 +19,21 @@ export interface BookingRequest {
   seats: Seat[];
 }
 
-// Согласно API документации - ответ от /me/bookings
 export interface UserBooking {
-  id: number;
+  id: string;
   movieSessionId: number;
+  userId: number;
+  isPaid: boolean;
   seats: Seat[];
+  bookedAt: string;
 }
 
-// Расширенный тип для отображения с дополнительной информацией
+export interface SessionInfoProps {
+  movieTitle?: string;
+  cinemaName?: string;
+  sessionTime?: string;
+}
+
 export interface BookingWithDetails extends UserBooking {
   session?: SessionDetails;
   movie?: {
@@ -43,6 +50,7 @@ export interface BookingWithDetails extends UserBooking {
 
 export interface BookingCardProps {
   booking: UserBooking;
+  onPayment?: (bookingId: string) => void;
 }
 
 export interface SeatSelectionProps {

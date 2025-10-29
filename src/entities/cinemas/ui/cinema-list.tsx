@@ -13,13 +13,13 @@ export const CinemaList = ({ onCinemaClick }: CinemaListProps) => {
         <span>Кинотеатр</span>
         <span>Адрес</span>
       </div>
-      <hr />
+      <hr className='border-gray-700' />
 
       <ul className='space-y-2'>
         {cinemas?.map((cinema) => (
           <li
             key={cinema.id}
-            className='grid grid-cols-3 gap-4 items-center rounded-2xl shadow-md p-2 hover:shadow-lg transition-shadow duration-200'
+            className='grid grid-cols-3 gap-4 items-center p-4'
           >
             <span>{cinema.name}</span>
             <span>{cinema.address}</span>

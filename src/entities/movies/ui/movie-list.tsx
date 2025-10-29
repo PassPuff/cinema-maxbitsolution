@@ -17,7 +17,7 @@ export const MovieList = ({ onMovieClick }: MovieListProps) => {
         <span>Длительность</span>
         <span>Рейтинг</span>
       </div>
-      <hr />
+      <hr className='border-gray-700' />
 
       <ul className='space-y-2'>
         {movies?.map((movie) => (
