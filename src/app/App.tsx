@@ -1,7 +1,7 @@
 import AppRouter from './router';
 import { Sidebar } from '@/widgets/sidebar';
 import { BrowserRouter } from 'react-router-dom';
-import { PageTitle } from '@/widgets/page-title';
+// import { PageTitle } from '@/widgets/page-title';
 import { QueryProvider, AuthProvider } from './providers';
 
 function App() {
