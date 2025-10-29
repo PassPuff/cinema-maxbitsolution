@@ -59,8 +59,8 @@ export interface SeatSelectionProps {
   bookedSeats: Seat[];
   onSeatsChange: (seats: Seat[]) => void;
   onBooking: () => void;
-  movieTitle: string;
-  cinemaName: string;
-  sessionTime: string;
+  movieTitle?: string;
+  cinemaName?: string;
+  sessionTime?: string;
   isBookingLoading: boolean;
 }

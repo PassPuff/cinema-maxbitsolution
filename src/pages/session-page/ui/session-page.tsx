@@ -59,8 +59,8 @@ const SessionPage: React.FC = () => {
       bookedSeats={sessionDetails.bookedSeats}
       onSeatsChange={handleSeatsChange}
       onBooking={handleBooking}
-      movieTitle={movie?.title}
-      cinemaName={cinema?.name}
+      movieTitle={movie?.title || ''}
+      cinemaName={cinema?.name || ''}
       sessionTime={formatTime(sessionDetails.startTime)}
       isBookingLoading={createBookingMutation.isPending}
     />
