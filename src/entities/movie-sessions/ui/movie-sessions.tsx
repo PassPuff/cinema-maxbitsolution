@@ -1,13 +1,14 @@
-import { useMovieSessionsQuery } from "../api/getMovieSessionsQuery";
 import { useParams } from "react-router-dom";
 import { useMoviesQuery } from "@/entities/movies";
+import { useGroupedMovieSessionsQuery } from "@/features/movie-sessions-grouping";
 import { Button } from "@/shared/components/ui/button";
 import { getImageUrl } from "@/shared/config";
 
 export const MovieSessions = () => {
   const { movieId } = useParams<{ movieId: string }>();
   const { data: movies } = useMoviesQuery();
-  const { data, isLoading, isError } = useMovieSessionsQuery(String(movieId));
+  const { data, isLoading, isError } = useGroupedMovieSessionsQuery(String(movieId));
+  
   if (isLoading) return <p>Загрузка...</p>;
   if (isError) return <p>Ошибка загрузки сеансов</p>;
   if (!data?.length) return <p>Нет доступных сеансов для этого фильма</p>;

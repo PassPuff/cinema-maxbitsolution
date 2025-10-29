@@ -1,9 +1,10 @@
 import React from "react";
+import { CinemaSessions } from "@/entities/cinema-sessions";
 
 const CinemaPage: React.FC = () => {
   return (
     <div>
-      <h2>Страница кинотеатра с сеансами!!</h2>
+      <CinemaSessions />
     </div>
   );
 };

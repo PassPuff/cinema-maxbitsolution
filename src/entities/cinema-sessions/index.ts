@@ -1,4 +1,4 @@
-export { MovieSessions } from "./ui/movie-sessions";
-export { useMovieSessionsQuery } from "./api/getMovieSessionsQuery";
+export { CinemaSessions } from "./ui/cinema-sessions";
+export { useCinemaSessionsQuery } from "./api/getCinemaSessionsQuery";
 export type { MovieSession } from "./model/types";
 
