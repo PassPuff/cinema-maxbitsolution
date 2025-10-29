@@ -3,3 +3,7 @@ export type Cinema = {
   name: string;
   address: string;
 };
+
+export interface CinemaListProps {
+  onCinemaClick: (cinemaId: number) => void;
+}

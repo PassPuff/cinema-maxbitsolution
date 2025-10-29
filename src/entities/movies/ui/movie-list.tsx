@@ -1,10 +1,8 @@
 import { useMoviesQuery } from '../api/getMovies';
 import { Button } from '@/shared/components/ui/button';
 import { getImageUrl } from '@/shared/config';
+import type { MovieListProps } from '../model/types';
 
-interface MovieListProps {
-  onMovieClick: (movieId: number) => void;
-}
 
 export const MovieList = ({ onMovieClick }: MovieListProps) => {
   const { data: movies, isLoading, isError } = useMoviesQuery();

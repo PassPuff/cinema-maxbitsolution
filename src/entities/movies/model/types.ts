@@ -7,3 +7,7 @@ export type Movie = {
   posterImage?: string;
   rating?: 0;
 };
+
+export interface MovieListProps {
+  onMovieClick: (movieId: number) => void;
+}

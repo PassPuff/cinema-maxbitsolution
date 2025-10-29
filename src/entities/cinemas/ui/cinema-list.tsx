@@ -1,9 +1,6 @@
 import { useCinemasQuery } from '../api/getCinemas';
 import { Button } from '@/shared/components/ui/button';
-
-interface CinemaListProps {
-  onCinemaClick: (cinemaId: number) => void;
-}
+import type { CinemaListProps } from '../model/types';
 
 export const CinemaList = ({ onCinemaClick }: CinemaListProps) => {
   const { data: cinemas, isLoading, isError } = useCinemasQuery();

@@ -4,3 +4,14 @@ export interface MovieSession {
   cinemaId: number;
   startTime: string;
 }
+
+export interface MovieInfoProps {
+  posterImage?: string;
+  title?: string;
+  lengthMinutes?: number;
+  description?: string;
+}
+
+export interface SessionTimeListProps {
+  sessions: MovieSession[];
+}
