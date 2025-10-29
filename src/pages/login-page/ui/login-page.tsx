@@ -1,12 +1,10 @@
 import { LoginForm } from '@/entities/auth';
-import { PageTitle } from '@/widgets/page-title';
 import { Link } from 'react-router-dom';
 import React from 'react';
 
 const LoginPage: React.FC = () => {
   return (
     <div className='container mx-auto px-4 py-8'>
-      <PageTitle />
       <div className='flex flex-col items-center justify-center min-h-[60vh]'>
         <div className='w-full max-w-md space-y-6'>
           <LoginForm />

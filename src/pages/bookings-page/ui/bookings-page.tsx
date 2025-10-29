@@ -1,4 +1,3 @@
-import { PageTitle } from '@/widgets/page-title';
 import { useUserBookingsQuery, usePayBookingMutation } from '@/entities/bookings';
 import { BookingCard } from '@/entities/bookings/ui/booking-card';
 import React, { useMemo } from 'react';
@@ -42,7 +41,6 @@ const BookingsPage: React.FC = () => {
 
   return (
     <div className='container mx-auto px-4 py-8'>
-      <PageTitle />
       
       {!bookings || bookings.length === 0 ? (
         <div className='rounded-lg p-6 text-center'>
