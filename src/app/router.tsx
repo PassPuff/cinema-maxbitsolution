@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import FilmsPage from "@/pages/films-page/ui/films-page";
 import CinemasPage from "@/pages/cinemas-page/ui/cinemas-page";
 import CinemaPage from "@/pages/cinema-page/ui/cinema-page";
-import LoginPage from "@/pages/work/login-page/ui/login-page";
+import LoginPage from "@/pages/login-page/ui/login-page";
 import RegisterPage from "@/pages/work/register-page/ui/register-page";
 // import MoviePage from "@/pages/movie-page/ui/movie-page";
 import MovieSessions from "@/pages/movie-page/ui/movie-page";
