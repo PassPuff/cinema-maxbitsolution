@@ -1,6 +1,6 @@
-import type { Movie } from "@/entities/movies";
-import type { MovieSession } from "@/entities/cinema-sessions";
-import type { GroupedMovieSessions } from "../model/types";
+import type { Movie } from '@/entities/movies';
+import type { MovieSession } from '@/entities/cinema-sessions';
+import type { GroupedMovieSessions } from '../model/types';
 
 /**
  * Группирует сеансы по фильмам
@@ -8,10 +8,7 @@ import type { GroupedMovieSessions } from "../model/types";
  * @param movies - массив фильмов
  * @returns массив сгруппированных сеансов по фильмам
  */
-export const groupSessionsByMovies = (
-  sessions: MovieSession[],
-  movies: Movie[]
-): GroupedMovieSessions[] => {
+export const groupSessionsByMovies = (sessions: MovieSession[], movies: Movie[]): GroupedMovieSessions[] => {
   return movies
     .map((movie) => ({
       movie,

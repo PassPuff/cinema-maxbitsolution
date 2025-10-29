@@ -5,60 +5,76 @@
 ## 📁 Структура слоев
 
 ### 🏗️ **app/** - Слой приложения
+
 - `router.tsx` - настройка роутинга
 - `providers/` - провайдеры (React Query, etc.)
 
 ### 📄 **pages/** - Слой страниц
+
 Композиция фич и виджетов для конкретных страниц:
+
 - `films-page/` - страница списка фильмов
-- `cinemas-page/` - страница списка кинотеатров  
+- `cinemas-page/` - страница списка кинотеатров
 - `movie-page/` - страница сеансов фильма
 - `cinema-page/` - страница сеансов кинотеатра
 
 ### 🧩 **widgets/** - Слой виджетов
+
 Самостоятельные композитные блоки:
+
 - `sidebar/` - боковая навигация
 - `page-title/` - заголовок страницы
 
 ### ⚡ **features/** - Слой фич (бизнес-логика)
+
 Содержит бизнес-логику и сложные операции:
 
 #### `movie-sessions-grouping/`
+
 Группировка сеансов фильма по кинотеатрам:
+
 - `api/useGroupedMovieSessionsQuery.ts` - хук для получения сгруппированных данных
 - `lib/groupSessionsByCinemas.ts` - функция группировки
 - `model/types.ts` - типы для группированных данных
 
 #### `cinema-sessions-grouping/`
+
 Группировка сеансов кинотеатра по фильмам:
+
 - `api/useGroupedCinemaSessionsQuery.ts` - хук для получения сгруппированных данных
 - `lib/groupSessionsByMovies.ts` - функция группировки
 - `model/types.ts` - типы для группированных данных
 
 ### 🎯 **entities/** - Слой бизнес-сущностей
+
 "Тупые" сущности с простыми API запросами:
 
 #### `movies/`
+
 - `api/getMovies.ts` - простой запрос списка фильмов
 - `model/types.ts` - тип Movie
 - `ui/movie-list.tsx` - компонент списка (без навигации)
 
 #### `cinemas/`
+
 - `api/getCinemas.ts` - простой запрос списка кинотеатров
 - `model/types.ts` - тип Cinema
 - `ui/cinema-list.tsx` - компонент списка (без навигации)
 
 #### `movie-sessions/`
+
 - `api/getMovieSessionsQuery.ts` - простой запрос сеансов фильма
 - `model/types.ts` - тип MovieSession
 - `ui/movie-sessions.tsx` - компонент отображения (использует features)
 
 #### `cinema-sessions/`
+
 - `api/getCinemaSessionsQuery.ts` - простой запрос сеансов кинотеатра
 - `model/types.ts` - тип MovieSession
 - `ui/cinema-sessions.tsx` - компонент отображения (использует features)
 
 ### 🔧 **shared/** - Переиспользуемый код
+
 - `api/` - базовые API утилиты
 - `components/ui/` - UI компоненты
 - `config/` - конфигурация (API_URL, etc.)
@@ -78,17 +94,17 @@
 
 ```typescript
 // ✅ Хорошо: entities используют только shared
-import { baseFetch } from "@/shared/api/baseFetch";
+import { baseFetch } from '@/shared/api/baseFetch';
 
 // ✅ Хорошо: features используют entities и shared
-import { useMovieSessionsQuery } from "@/entities/movie-sessions";
-import { useCinemasQuery } from "@/entities/cinemas";
+import { useMovieSessionsQuery } from '@/entities/movie-sessions';
+import { useCinemasQuery } from '@/entities/cinemas';
 
 // ✅ Хорошо: pages используют features, widgets, entities
-import { useGroupedMovieSessionsQuery } from "@/features/movie-sessions-grouping";
+import { useGroupedMovieSessionsQuery } from '@/features/movie-sessions-grouping';
 
 // ❌ Плохо: entities не должны использовать features
-import { useGroupedMovieSessionsQuery } from "@/features/movie-sessions-grouping";
+import { useGroupedMovieSessionsQuery } from '@/features/movie-sessions-grouping';
 ```
 
 ### ✅ **Компоненты entities без навигации:**

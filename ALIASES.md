@@ -4,34 +4,34 @@
 
 ## 📋 Доступные алиасы
 
-| Алиас | Путь | Описание |
-|-------|------|----------|
-| `@/*` | `./src/*` | Корень src директории |
-| `@/app/*` | `./src/app/*` | Слой приложения (роутинг, провайдеры) |
-| `@/pages/*` | `./src/pages/*` | Слой страниц |
-| `@/widgets/*` | `./src/widgets/*` | Слой виджетов (композиты) |
-| `@/features/*` | `./src/features/*` | Слой фич (бизнес-логика) |
-| `@/entities/*` | `./src/entities/*` | Слой бизнес-сущностей |
-| `@/shared/*` | `./src/shared/*` | Переиспользуемый код |
+| Алиас          | Путь               | Описание                              |
+| -------------- | ------------------ | ------------------------------------- |
+| `@/*`          | `./src/*`          | Корень src директории                 |
+| `@/app/*`      | `./src/app/*`      | Слой приложения (роутинг, провайдеры) |
+| `@/pages/*`    | `./src/pages/*`    | Слой страниц                          |
+| `@/widgets/*`  | `./src/widgets/*`  | Слой виджетов (композиты)             |
+| `@/features/*` | `./src/features/*` | Слой фич (бизнес-логика)              |
+| `@/entities/*` | `./src/entities/*` | Слой бизнес-сущностей                 |
+| `@/shared/*`   | `./src/shared/*`   | Переиспользуемый код                  |
 
 ## 💡 Примеры использования
 
 ### ❌ Было (длинные относительные пути):
 
 ```typescript
-import { MovieList } from "../../../entities/movies";
-import { Button } from "../../../shared/components/ui/button";
-import { getImageUrl } from "../../../shared/config";
-import FilmsPage from "../pages/films-page/ui/films-page";
+import { MovieList } from '../../../entities/movies';
+import { Button } from '../../../shared/components/ui/button';
+import { getImageUrl } from '../../../shared/config';
+import FilmsPage from '../pages/films-page/ui/films-page';
 ```
 
 ### ✅ Стало (короткие алиасы):
 
 ```typescript
-import { MovieList } from "@/entities/movies";
-import { Button } from "@/shared/components/ui/button";
-import { getImageUrl } from "@/shared/config";
-import FilmsPage from "@/pages/films-page/ui/films-page";
+import { MovieList } from '@/entities/movies';
+import { Button } from '@/shared/components/ui/button';
+import { getImageUrl } from '@/shared/config';
+import FilmsPage from '@/pages/films-page/ui/films-page';
 ```
 
 ## 🔧 Конфигурация
@@ -46,19 +46,21 @@ import FilmsPage from "@/pages/films-page/ui/films-page";
 
 1. **Используйте алиасы** для импортов из других слоев FSD
 2. **Используйте относительные пути** для импортов внутри одного модуля:
+
    ```typescript
    // ✅ Хорошо: внутри entities/movies
-   import { useMoviesQuery } from "../api/getMovies";
-   import type { Movie } from "../model/types";
+   import { useMoviesQuery } from '../api/getMovies';
+   import type { Movie } from '../model/types';
    ```
 
 3. **Всегда используйте Public API** (index.ts) при импорте между слоями:
+
    ```typescript
    // ✅ Хорошо
-   import { MovieList } from "@/entities/movies";
-   
+   import { MovieList } from '@/entities/movies';
+
    // ❌ Плохо
-   import { MovieList } from "@/entities/movies/ui/movie-list";
+   import { MovieList } from '@/entities/movies/ui/movie-list';
    ```
 
 ## 🎯 Преимущества
@@ -75,4 +77,3 @@ import FilmsPage from "@/pages/films-page/ui/films-page";
 
 1. Перезапустите TypeScript сервер в IDE
 2. Или перезапустите dev сервер: `npm run dev`
-

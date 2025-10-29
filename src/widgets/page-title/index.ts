@@ -1,2 +1,1 @@
-export { PageTitle } from "./ui/page-title";
-
+export { PageTitle } from './ui/page-title';

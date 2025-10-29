@@ -1,6 +1,6 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { CinemaList } from "@/entities/cinemas";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { CinemaList } from '@/entities/cinemas';
 
 const CinemasPage: React.FC = () => {
   const navigate = useNavigate();

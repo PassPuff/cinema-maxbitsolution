@@ -1,7 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
-import { baseFetch } from "@/shared/api/baseFetch";
-import { queryKeys } from "@/shared/api/queryKeys";
-import type { MovieSession } from "../model/types";
+import { useQuery } from '@tanstack/react-query';
+import { baseFetch } from '@/shared/api/baseFetch';
+import { queryKeys } from '@/shared/api/queryKeys';
+import type { MovieSession } from '../model/types';
 
 const fetchMovieSessions = async (movieId: string): Promise<MovieSession[]> => {
   return baseFetch<MovieSession[]>(`/movies/${movieId}/sessions`);

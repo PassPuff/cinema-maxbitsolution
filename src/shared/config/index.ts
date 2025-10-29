@@ -1,2 +1,1 @@
-export { API_URL, getImageUrl } from "./api";
-
+export { API_URL, getImageUrl } from './api';
