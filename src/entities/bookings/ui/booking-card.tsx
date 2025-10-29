@@ -4,6 +4,7 @@ import { useMoviesQuery } from '@/entities/movies';
 import { useCinemasQuery } from '@/entities/cinemas';
 import { formatSeats } from '@/shared/lib/formatSeats';
 import { formatDateTime ,formatTimeLeft} from '@/shared/lib/formatDateTime';
+import { getImageUrl } from '@/shared/config';
 import { Button } from '@/shared/components';
 
 import type { BookingCardProps } from '../model/types';
@@ -19,6 +20,7 @@ export const BookingCard: React.FC<BookingCardProps> = ({ booking, onPayment }) 
   const movie = movies?.find((m) => m.id === sessionDetails?.movieId);
   const cinema = cinemas?.find((c) => c.id === sessionDetails?.cinemaId);
 
+  console.log(movie);
   // Таймер для неоплаченных бронирований
   useEffect(() => {
     if (!booking.isPaid && booking.bookedAt) {
@@ -48,6 +50,7 @@ export const BookingCard: React.FC<BookingCardProps> = ({ booking, onPayment }) 
 
   return (
     <div className='flex items-start gap-6 py-4 border-b border-gray-800 last:border-b-0'>
+      <img src={getImageUrl(movie?.posterImage)} alt={movie?.title} className='w-20 h-28 object-cover rounded' />
       <div className='flex-1'>
         <h3 className='text-lg font-medium mb-1'>{movie?.title || 'Неизвестный фильм'}</h3>
         <p className='text-gray-400 mb-1'>{cinema?.name || 'Неизвестный кинотеатр'}</p>
