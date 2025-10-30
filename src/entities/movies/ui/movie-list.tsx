@@ -3,7 +3,6 @@ import { Button } from '@/shared/components/ui/button';
 import { getImageUrl } from '@/shared/config';
 import type { MovieListProps } from '../model/types';
 
-
 export const MovieList = ({ onMovieClick }: MovieListProps) => {
   const { data: movies, isLoading, isError } = useMoviesQuery();
 

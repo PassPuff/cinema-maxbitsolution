@@ -1,9 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import {
-  validateUsername,
-  validatePassword,
-  validatePasswordConfirmation,
-} from './validation';
+import { validateUsername, validatePassword, validatePasswordConfirmation } from './validation';
 
 describe('validateUsername', () => {
   describe('Позитивные тесты', () => {
@@ -289,4 +285,3 @@ describe('validatePasswordConfirmation', () => {
     });
   });
 });
-

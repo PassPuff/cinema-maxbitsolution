@@ -38,7 +38,6 @@ const BookingsPage: React.FC = () => {
 
   return (
     <div className='container mx-auto px-4 py-8'>
-      
       {!bookings || bookings.length === 0 ? (
         <div className='rounded-lg p-6 text-center'>
           <p className='text-gray-500'>У вас пока нет забронированных билетов</p>

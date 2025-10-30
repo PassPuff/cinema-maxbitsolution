@@ -22,4 +22,3 @@ export const MovieSessionsCard: React.FC<MovieSessionsCardProps> = ({ movie, ses
     </div>
   );
 };
-

@@ -3,7 +3,7 @@ import { useSessionDetailsQuery } from '../api/sessionApi';
 import { useMoviesQuery } from '@/entities/movies';
 import { useCinemasQuery } from '@/entities/cinemas';
 import { formatSeats } from '@/shared/lib/formatSeats';
-import { formatDateTime ,formatTimeLeft} from '@/shared/lib/formatDateTime';
+import { formatDateTime, formatTimeLeft } from '@/shared/lib/formatDateTime';
 import { getImageUrl } from '@/shared/config';
 import { Button } from '@/shared/components';
 
@@ -36,8 +36,6 @@ export const BookingCard: React.FC<BookingCardProps> = ({ booking, onPayment }) 
     }
   }, [booking.isPaid, booking.bookedAt]);
 
-
-
   if (!sessionDetails) {
     return (
       <div className='rounded-lg shadow-md p-6'>
@@ -62,10 +60,7 @@ export const BookingCard: React.FC<BookingCardProps> = ({ booking, onPayment }) 
       {!booking.isPaid && (
         <>
           <div className='text-center'>
-            <Button
-              onClick={() => onPayment?.(booking.id)}
-              variant="default"
-            >
+            <Button onClick={() => onPayment?.(booking.id)} variant='default'>
               Оплатить
             </Button>
           </div>

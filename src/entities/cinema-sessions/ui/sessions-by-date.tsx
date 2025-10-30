@@ -5,7 +5,6 @@ import { formatDate, formatTime } from '@/shared/lib/formatDateTime';
 import type { MovieSession } from '../model/types';
 import type { SessionsByDateProps } from '../model/types';
 
-
 export const SessionsByDate: React.FC<SessionsByDateProps> = ({ sessions }) => {
   const navigate = useNavigate();
 
@@ -27,9 +26,7 @@ export const SessionsByDate: React.FC<SessionsByDateProps> = ({ sessions }) => {
           <ul className='flex flex-wrap gap-3'>
             {dateSessions.map((session) => (
               <li key={session.id}>
-                <Button onClick={() => navigate(`/sessions/${session.id}`)}>
-                  {formatTime(session.startTime)}
-                </Button>
+                <Button onClick={() => navigate(`/sessions/${session.id}`)}>{formatTime(session.startTime)}</Button>
               </li>
             ))}
           </ul>
@@ -38,4 +35,3 @@ export const SessionsByDate: React.FC<SessionsByDateProps> = ({ sessions }) => {
     </>
   );
 };
-

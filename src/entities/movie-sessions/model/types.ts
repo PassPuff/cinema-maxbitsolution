@@ -15,4 +15,3 @@ export interface MovieInfoProps {
 export interface SessionTimeListProps {
   sessions: MovieSession[];
 }
-

@@ -14,4 +14,3 @@ export const MovieInfo: React.FC<MovieInfoProps> = ({ posterImage, title, length
     </div>
   );
 };
-

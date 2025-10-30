@@ -8,13 +8,7 @@ interface SeatButtonProps {
   onToggle: (row: number, seat: number) => void;
 }
 
-export const SeatButton: React.FC<SeatButtonProps> = ({
-  rowNumber,
-  seatNumber,
-  isBooked,
-  isSelected,
-  onToggle,
-}) => {
+export const SeatButton: React.FC<SeatButtonProps> = ({ rowNumber, seatNumber, isBooked, isSelected, onToggle }) => {
   const baseClasses =
     'w-10 h-10 border-2 rounded cursor-pointer transition-colors duration-200 flex items-center justify-center text-xs font-medium';
 
@@ -41,4 +35,3 @@ export const SeatButton: React.FC<SeatButtonProps> = ({
     </button>
   );
 };
-

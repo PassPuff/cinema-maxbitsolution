@@ -2,7 +2,6 @@ import React from 'react';
 import { getImageUrl } from '@/shared/config';
 import type { MoviePosterProps } from '../model/types';
 
-
 export const MoviePoster: React.FC<MoviePosterProps> = ({ posterImage, title, lengthMinutes, description }) => {
   return (
     <div className='flex gap-6 items-start mb-4'>
@@ -15,4 +14,3 @@ export const MoviePoster: React.FC<MoviePosterProps> = ({ posterImage, title, le
     </div>
   );
 };
-

@@ -18,4 +18,3 @@ export const SeatLegend: React.FC = () => {
     </div>
   );
 };
-

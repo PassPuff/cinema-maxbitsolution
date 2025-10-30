@@ -26,7 +26,7 @@ export const SeatSelection: React.FC<SeatSelectionProps> = ({
 
     const seatObj = { rowNumber: row, seatNumber: seat };
     const isSeatSelected = selectedSeats.some((s) => s.rowNumber === row && s.seatNumber === seat);
-    
+
     let newSelectedSeats: Seat[];
 
     if (isSeatSelected) {

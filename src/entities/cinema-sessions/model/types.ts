@@ -17,7 +17,6 @@ export interface MoviePosterProps {
   description: string;
 }
 
-
 export interface SessionsByDateProps {
   sessions: MovieSession[];
 }

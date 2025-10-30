@@ -38,7 +38,6 @@ const AppRouter: React.FC = () => (
         </ProtectedRoute>
       }
     />
-
   </Routes>
 );
 

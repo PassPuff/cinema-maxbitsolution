@@ -9,4 +9,3 @@ export const CinemaInfo: React.FC<CinemaInfoProps> = ({ name, address }) => {
     </div>
   );
 };
-

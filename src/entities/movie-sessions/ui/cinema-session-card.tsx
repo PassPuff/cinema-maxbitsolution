@@ -21,4 +21,3 @@ export const CinemaSessionCard: React.FC<CinemaSessionCardProps> = ({ cinema, se
     </div>
   );
 };
-

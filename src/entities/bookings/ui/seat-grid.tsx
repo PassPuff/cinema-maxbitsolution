@@ -10,13 +10,7 @@ interface SeatGridProps {
   onToggleSeat: (row: number, seat: number) => void;
 }
 
-export const SeatGrid: React.FC<SeatGridProps> = ({
-  rows,
-  seatsPerRow,
-  bookedSeats,
-  selectedSeats,
-  onToggleSeat,
-}) => {
+export const SeatGrid: React.FC<SeatGridProps> = ({ rows, seatsPerRow, bookedSeats, selectedSeats, onToggleSeat }) => {
   const isSeatBooked = (row: number, seat: number) => {
     return bookedSeats.some((s) => s.rowNumber === row && s.seatNumber === seat);
   };
@@ -66,4 +60,3 @@ export const SeatGrid: React.FC<SeatGridProps> = ({
     </div>
   );
 };
-

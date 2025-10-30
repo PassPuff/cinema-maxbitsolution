@@ -17,4 +17,3 @@ export const SessionTimeList: React.FC<SessionTimeListProps> = ({ sessions }) =>
     </ul>
   );
 };
-
