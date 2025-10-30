@@ -15,7 +15,6 @@ export const useCreateBookingMutation = () => {
         body: JSON.stringify(bookingData),
       }),
     onSuccess: () => {
-      // Инвалидируем кэш бронирований пользователя и деталей сеанса
       queryClient.invalidateQueries({ queryKey: ['bookings'] });
       queryClient.invalidateQueries({ queryKey: ['session'] });
     },

@@ -7,7 +7,6 @@ const BookingsPage: React.FC = () => {
   const { data: bookings, isLoading, isError } = useUserBookingsQuery();
   const payBookingMutation = usePayBookingMutation();
 
-  // Группировка бронирований
   const groupedBookings = useMemo(() => {
     if (!bookings) return { unpaid: [], upcoming: [], past: [] };
 
@@ -19,8 +18,6 @@ const BookingsPage: React.FC = () => {
       if (!booking.isPaid) {
         unpaid.push(booking);
       } else {
-        // Для проверки нужно получить время сеанса, но это требует дополнительных запросов
-        // Пока упрощенная логика - все оплаченные в "Будущие"
         upcoming.push(booking);
       }
     });

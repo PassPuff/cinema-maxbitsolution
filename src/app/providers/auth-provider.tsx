@@ -12,7 +12,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    // Проверяем наличие токена и пользователя в localStorage при загрузке
     const token = localStorage.getItem('auth_token');
     const savedUser = localStorage.getItem('user');
 
@@ -22,7 +21,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setUser(parsedUser);
         setIsAuthenticated(true);
       } catch {
-        // Если данные повреждены, очищаем localStorage
         localStorage.removeItem('auth_token');
         localStorage.removeItem('user');
       }

@@ -44,7 +44,6 @@ const SessionPage: React.FC = () => {
         bookingData: { seats: selectedSeats },
       });
 
-      // Перенаправляем на страницу "Мои билеты"
       navigate('/bookings');
     } catch (error) {
       console.error('Ошибка при бронировании:', error);

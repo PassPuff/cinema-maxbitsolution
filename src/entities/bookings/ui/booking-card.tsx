@@ -20,8 +20,6 @@ export const BookingCard: React.FC<BookingCardProps> = ({ booking, onPayment }) 
   const movie = movies?.find((m) => m.id === sessionDetails?.movieId);
   const cinema = cinemas?.find((c) => c.id === sessionDetails?.cinemaId);
 
-  console.log(movie);
-  // Таймер для неоплаченных бронирований
   useEffect(() => {
     if (!booking.isPaid && booking.bookedAt) {
       const updateTimer = () => {
