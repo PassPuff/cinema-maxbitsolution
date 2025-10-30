@@ -24,10 +24,7 @@ const Sidebar: React.FC = () => {
   const getAuthLink = () => {
     if (isAuthenticated) {
       return (
-        <button
-          onClick={handleLogout}
-          className='text-[#ccc] hover:text-white transition-colors'
-        >
+        <button onClick={handleLogout} className='text-[#ccc] hover:text-white transition-colors'>
           Выход
         </button>
       );
